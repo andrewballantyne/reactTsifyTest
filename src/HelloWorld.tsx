@@ -1,25 +1,12 @@
-/** We of course need our React external library **/
 import * as React from 'react';
 
-/**
- * Props/State defining...
- *
- * One of many ways to create props and state; React.Component requires both <Props, State>.
- *
- * Other ways can include:
- *   // Directly
- *   React.Component<{...}, {...}>
- *
- *   // A 'don't care' approach; 'any' type is of course any structure
- *   React.Component<any, any>
- */
-type props = {
-  /** Standard property definitions for any TypeScript 'type'; the ? denotes optional */
-  name?:string
-};
-type state = {};
+import { AbstractStatelessComponent } from './ReactHelpers';
 
-class HelloWorld extends React.Component<props, state> {
+type helloWorldProps = {
+  name?:string;
+};
+
+class HelloWorld extends AbstractStatelessComponent<helloWorldProps> {
   public render():JSX.Element {
     const { name } = this.props;
     return (
@@ -38,8 +25,6 @@ class HelloWorld extends React.Component<props, state> {
   }
 }
 
-/** Expose our props; possible use of someone wanting to reference it as part of their props **/
-export type HelloWorldProps = props;
+export type HelloWorldProps = helloWorldProps;
 
-/** Allows this file to be a target of 'import HelloWorld from 'HelloWorld';' **/
 export default HelloWorld;
