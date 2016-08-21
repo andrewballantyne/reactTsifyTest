@@ -1,0 +1,26 @@
+{
+  "name": "react-tsify-test",
+  "version": "1.0.0",
+  "description": "React + Browserify (using Tsify) + Typescript proof of concept",
+  "scripts": {
+    "pack": "browserify src/main.tsx -p [ tsify --jsx react --noImplicitAny ] > out/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballantyno/reactTsifyTest.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ballantyno/reactTsifyTest/issues"
+  },
+  "homepage": "https://github.com/ballantyno/reactTsifyTest#readme",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "tsify": "^1.0.3",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
